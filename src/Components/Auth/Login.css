@@ -1,0 +1,124 @@
+
+
+.text {
+    text-align: center;
+    display : flex ;
+    align-items: center;
+    height: 100vh;
+}
+.loginfrom{
+    width: 50%  ;
+    height: 80% ;
+    background-color: white;
+    border: 4px solid #4F5992;
+    border-radius: 20px;
+    padding: 40px 60px;
+    position: relative;
+}
+.heading{
+    color:#4F5992;
+    margin-bottom: 40px;
+    display: block;
+}
+.subheading{
+    font-size: 14px;
+    color: #BBC0DD;
+}
+.label{
+    font-size: 14px;
+    color :#2D3748;
+    display : block ;
+    text-align:left;
+    margin-bottom: 10px;
+}
+.textfield {
+    padding: 10px;
+    display: block;
+    border: 1px solid #E2E8F0;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.button{
+    background-color: #4F5992;
+    color :white ;
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px; 
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 18px;
+}
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color:#4F5992;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .uplogo{
+     position: absolute;
+     right: -40px;
+     top: -80px;
+     width: 150px;
+
+  }
+  .videologo{
+    position: absolute;
+    left: -30px;
+    bottom: -30px;
+    width: 100px;
+  }

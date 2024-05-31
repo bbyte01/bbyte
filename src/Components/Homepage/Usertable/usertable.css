@@ -1,0 +1,65 @@
+.heading-user{
+    background-color: #E7EBFF;
+    color: black;
+    height: 830px; 
+    width: 1200px; 
+    margin: 70px auto 0px auto; 
+    background-color: white; 
+    border-radius: 30px; 
+    box-shadow: 3px 3px 10px rgb(188, 188, 188); 
+    padding:20px ; 
+    margin-left: 15px; 
+    
+
+}
+.selectall{
+    background-color: #ffffff; 
+    padding:5px ; 
+    box-shadow : 0px 0px 10px #ccc;
+    border-radius: 10px;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    color: #4F5992;
+    font-weight: bold;    
+    cursor: pointer; 
+    display: inline-block;
+    margin-right: 20px;
+   
+   }
+   table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+   
+  }
+  
+  td, th {
+    border-radius: 10px;
+    cursor: pointer; 
+    text-align: left;
+    padding: 8px;
+    max-width:100px;
+   
+  }
+  
+  tr {
+    background-color: white  ;
+    border-bottom: 1px solid #000;
+    
+}
+
+ .email{
+  font-weight: bold;
+}
+.inactive{
+  color: white;
+  background-color: #ccc;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  padding: 0px 20px;
+  max-width:100px;
+  
+}
+   

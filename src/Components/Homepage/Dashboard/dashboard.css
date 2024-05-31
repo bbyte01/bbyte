@@ -1,0 +1,15 @@
+.dashboard {
+    display: flex;
+}
+.sidebar {
+    width : 265px;
+    display : inline-block;
+}
+.dashboard-content {
+    display : inline-block;
+    padding : 20px;
+    width: 100%;
+    overflow: auto;
+    max-height: calc(100vh - 80px);
+    background-color: #E7EBFF;
+}
