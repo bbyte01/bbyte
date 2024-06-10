@@ -28,24 +28,6 @@ function DashboardRoutes() {
                 </Route>
                 <Route path='totalvideo' element={<Totalvideo />} />
             </Routes>
-            {/* {(() => {
-                switch(page_type) {
-                    case 'dashboard' :
-                        return <Homepage />
-                    case 'totaluser' :
-                        return <Totaluser />
-                    case 'usertable' : 
-                        return <Usertable />
-                    case 'uservideo' :
-                        return <Totaluservideo />
-                    case 'totalvideo' :
-                        return <Totalvideo />
-                      
-                    default :
-                        return <Homepage />
-
-                }
-            })()} */}
         </Box>
     )
 }

@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import "./Login.css";
-import * as Yup from 'yup'
+import * as Yup from "yup";
 import img1 from "../../images/img1.png";
 import img2 from "../../images/img2.png";
 import logo from "../../images/logo.png";
@@ -91,8 +91,8 @@ function Login() {
             enableReinitialize
             initialValues={initialValues}
             validationSchema={Yup.object({
-              name : Yup.string().required('Required'),
-              password : Yup.string().required('Required'),
+              name: Yup.string().required("Required"),
+              password: Yup.string().required("Required"),
             })}
             onSubmit={(values, { setSubmitting }) => {
               getLoginData(setSubmitting);
@@ -102,13 +102,13 @@ function Login() {
               errors,
               handleSubmit,
               isSubmitting,
-              touched
+              touched,
               /* and other goodies */
             }) => (
               <form onSubmit={handleSubmit}>
                 <Box
                   sx={{
-                    mb : '20px'
+                    mb: "20px",
                   }}
                 >
                   <Field
@@ -123,7 +123,7 @@ function Login() {
                 </Box>
                 <Box
                   sx={{
-                    marginBottom : '20px'
+                    marginBottom: "20px",
                   }}
                 >
                   <Field
@@ -144,14 +144,12 @@ function Login() {
                   </label>
                 </div> */}
 
-                <button className="button" type="submit" disabled={isSubmitting}>
-                  {
-                    isSubmitting
-                    ?
-                    <CircularProgress size={20} />
-                    :
-                  'Login'
-                  }
+                <button
+                  className="button"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? <CircularProgress size={20} /> : "Login"}
                 </button>
               </form>
             )}

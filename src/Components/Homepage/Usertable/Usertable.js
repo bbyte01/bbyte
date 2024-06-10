@@ -135,11 +135,14 @@ function Usertable({userData}) {
                   <TableCell align="left" sx={{textTransform: 'capitalize'}}>{row.gender}</TableCell>
                   <TableCell align="left">
                     <Box display="flex" alignItems="center" justifyContent="flex-start">
-                      <Avatar 
+                      {/* <Avatar 
                         sx={{
                           marginRight : '10px'
+                         
                         }}
-                      />
+                       
+                      /> */}
+                      <Avatar src={row.profile_picture} sx={{mr : '5px'}}>{row.name.split('')[0]}</Avatar>
                       <Link to={`/uservideo/${row.username}`}>
                         {row.username}
                       </Link>
