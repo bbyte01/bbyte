@@ -31,7 +31,7 @@ const rows = [
   createData(5, "User127", "test5@gmail.com", "Active"),
 ];
 
-function Usertable({userData}) {
+function Usertable({ userData }) {
   const navigate = useNavigate();
   const [selected, setSelected] = useState([]);
 
@@ -131,10 +131,18 @@ function Usertable({userData}) {
                     />
                   </TableCell>
                   <TableCell align="left">{index + 1}</TableCell>
-                  <TableCell align="left" sx={{textTransform: 'capitalize'}}>{row.name}</TableCell>
-                  <TableCell align="left" sx={{textTransform: 'capitalize'}}>{row.gender}</TableCell>
+                  <TableCell align="left" sx={{ textTransform: "capitalize" }}>
+                    {row.name}
+                  </TableCell>
+                  <TableCell align="left" sx={{ textTransform: "capitalize" }}>
+                    {row.gender}
+                  </TableCell>
                   <TableCell align="left">
-                    <Box display="flex" alignItems="center" justifyContent="flex-start">
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="flex-start"
+                    >
                       {/* <Avatar 
                         sx={{
                           marginRight : '10px'
@@ -142,7 +150,9 @@ function Usertable({userData}) {
                         }}
                        
                       /> */}
-                      <Avatar src={row.profile_picture} sx={{mr : '5px'}}>{row.name.split('')[0]}</Avatar>
+                      <Avatar src={row.profile_picture} sx={{ mr: "5px" }}>
+                        {row.name.split[0]}
+                      </Avatar>
                       <Link to={`/uservideo/${row.username}`}>
                         {row.username}
                       </Link>
@@ -150,10 +160,10 @@ function Usertable({userData}) {
                   </TableCell>
                   <TableCell align="left">{row.email}</TableCell>
                   <TableCell align="left">
-                    <Chip 
+                    <Chip
                       size="small"
                       color={row.status === "inactive" ? "error" : "success"}
-                      label={row.status ? row?.status : 'active'}
+                      label={row.status ? row?.status : "active"}
                     />
                   </TableCell>
                 </TableRow>

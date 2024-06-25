@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react";  
 import "./Sidebar.css";
 import Logo from "../../../../images/uplogo.png";
-import { IconHome, IconUser, IconUserCircle } from "@tabler/icons-react";
+import { IconHome, IconReport, IconUser, IconUserCircle } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 
@@ -14,6 +14,11 @@ function Sidebar() {
   function totalusers() {
     navigate("/totaluser");
   }
+  
+  function reports(){
+    navigate("/report");
+  }
+
   return (
     <div className="Sidebar">
       <Box p="20px" pb="0px">
@@ -34,24 +39,24 @@ function Sidebar() {
             </Box>
             <Typography className="li-text">User</Typography>
           </li>
-          <li className="sidebar-li">
+          <li onClick={reports} className="sidebar-li">
             <Box className="icon-bg">
-              {/* <IconUser 
+              <IconReport 
                 className="icon"
-              /> */}
+              />
             </Box>
-            <Typography className="li-text">Billings</Typography>
+            <Typography className="li-text">Report</Typography>
           </li>
 
           <li className="sidebar-li">
             <b>Account Type</b>
           </li>
-          <li onClick={login} className="sidebar-li">
+          {/* <li onClick={login} className="sidebar-li">
             <Box className="icon-bg">
               <IconUserCircle className="icon" />
             </Box>
             <Typography className="li-text">Profile</Typography>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

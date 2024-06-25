@@ -156,22 +156,21 @@ function Homepage() {
       </div>
       <div className="chart">
         <Box display="flex" alignItems="center" justifyContent="space-between">
-        <h2>User Overview</h2>
-        <FormControl size="small" sx={{width: "100px"}}>
-          <InputLabel id="demo-simple-select-labels"></InputLabel>
-        <Select
-        label= "Year"
-        ladelId= "demo-simple-select-labels"
-        value={year}
-        onchange={handleYearChange}
-        >
-          <MenuItem value='2024'>2024</MenuItem>
-          <MenuItem value='2023'>2023</MenuItem>
-          <MenuItem value='2022'>2022</MenuItem>
-          <MenuItem value='2021'>2021</MenuItem>
-
-        </Select>
-        </FormControl>
+          <h2>User Overview</h2>
+          <FormControl size="small" sx={{ width: "100px" }}>
+            <InputLabel id="demo-simple-select-labels">Year</InputLabel>
+            <Select
+              label="Year"
+              ladelId="demo-simple-select-labels"
+              value={year}
+              onchange={handleYearChange}
+            >
+              <MenuItem value="2024">2024</MenuItem>
+              <MenuItem value="2023">2023</MenuItem>
+              <MenuItem value="2022">2022</MenuItem>
+              <MenuItem value="2021">2021</MenuItem>
+            </Select>
+          </FormControl>
         </Box>
         <BarChart
           xAxis={[
@@ -181,10 +180,10 @@ function Homepage() {
             },
           ]}
           series={[
+            { data: monthCount },
             { data: [2, 5, 6, 5, 8, 9, 9, 8, 2, 5, 6, 5, 8, 9, 9, 8] },
-            { data: [2, 5, 6, 5, 8, 9, 9, 8, 2, 5, 6, 5, 8, 9, 9, 8] },
-            { data: [2, 5, 6, 5, 8, 9, 9, 8, 2, 5, 6, 5, 8, 9, 9, 8] },
-            { data: [2, 5, 6, 5, 8, 9, 9, 8, 2, 5, 6, 5, 8, 9, 9, 8] },
+            { data: monthCount },
+            { data: monthCount },
           ]}
           width={1200}
           height={300}

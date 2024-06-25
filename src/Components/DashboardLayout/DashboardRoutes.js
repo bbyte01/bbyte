@@ -6,6 +6,7 @@ import Usertable from '../Homepage/Usertable/Usertable';
 import Totaluservideo from '../Uservideo/Totaluservideo';
 import Totalvideo from '../Totalvideo/Totalvideo';
 import { Box } from '@mui/material';
+import Report from '../Report/Report';
 
 function DashboardRoutes() {
     const params = useParams()
@@ -26,6 +27,7 @@ function DashboardRoutes() {
                 <Route path='uservideo' element={<Totaluservideo />}>
                     <Route path=':userId' element={<></>} />
                 </Route>
+                    <Route path ='report' element={<Report/>} />
                 <Route path='totalvideo' element={<Totalvideo />} />
             </Routes>
         </Box>

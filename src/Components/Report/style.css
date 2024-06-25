@@ -1,0 +1,45 @@
+.owl-prev {
+    position : absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left : 20px;
+    height:  50px;
+    width : 50px;
+    background : #fff !important;
+    border-radius: 50% !important;
+}
+
+.owl-prev span {
+    display : block;
+    font-size: 30px;
+    height : 50px !important;
+    width : 50px !important;
+}
+
+.owl-prev:hover span{
+    color : #000 !important;
+    transform: translate(1.5);
+}
+
+.owl-next {
+    position : absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right : 20px;
+    height:  50px;
+    width : 50px;
+    background : #fff !important;
+    border-radius: 50% !important;
+}
+
+.owl-next span {
+    display : block;
+    font-size: 30px;
+    height : 50px !important;
+    width : 50px !important;
+}
+
+.owl-next:hover span{
+    color : #000 !important;
+    transform: translate(1.5);
+}

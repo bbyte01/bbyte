@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PrivateRoute } from "./Components/PrivateRoute";
 import DashboardLayout from "./Components/DashboardLayout/DashboardLayout";
 
-
 const Approute = () => {
   return (
     <BrowserRouter>
