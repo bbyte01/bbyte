@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   FormControl,
   InputLabel,
@@ -21,36 +22,31 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { IconCircleArrowUpFilled } from "@tabler/icons-react";
 
 function Filter({ startDate, setStartDate, endDate, setEndDate, getReport }) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   const handleSubmit = () => {
-    setOpen(false)
-    getReport()
-  }
+    setOpen(false);
+    getReport();
+  };
+
   return (
     <Box>
       <Paper
         sx={{
-          width : '250px',
-          padding : '5px 20px',
-          position : 'absolute',
-          right : '60px',
-          top : '8px'
+          width: "250px",
+          padding: "5px 20px",
+          position: "absolute",
+          right: "60px",
+          top: "8px",
         }}
       >
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
-        >
+        <Box display="flex" alignItems="center" justifyContent="space-between">
           <Typography>Filter</Typography>
-          <IconButton
-            onClick={()=> setOpen(!open)}
-          >
-            <IconCircleArrowUpFilled 
+          <IconButton onClick={() => setOpen(!open)}>
+            <IconCircleArrowUpFilled
               style={{
-                rotate : open ? '180deg' : '0deg',
-                transition : '0.5s'
+                rotate: open ? "180deg" : "0deg",
+                transition: "0.5s",
               }}
             />
           </IconButton>
@@ -79,12 +75,18 @@ function Filter({ startDate, setStartDate, endDate, setEndDate, getReport }) {
               </Box>
             </LocalizationProvider>
           </Box>
-         
-          <Button variant="contained" fullWidth sx={{mt : '10px'}} onClick={handleSubmit}>Submit</Button>
+
+          <Button
+            variant="contained"
+            fullWidth
+            sx={{ mt: "10px" }}
+            onClick={handleSubmit}
+          >
+            Submit
+          </Button>
         </Collapse>
       </Paper>
     </Box>
-    
   );
 }
 export default Filter;

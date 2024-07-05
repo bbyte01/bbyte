@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
@@ -10,6 +10,9 @@ import Typography from "@mui/material/Typography";
 import { IconSquareRoundedX } from "@tabler/icons-react";
 import { Avatar, Box, Grid } from "@mui/material";
 import Screenshotdialog from "./Screenshotdialog";
+import axios from "axios";
+import { Config } from "../../Config/config";
+const { API_URL } = Config;
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -26,9 +29,10 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export default function ReportDialog({ open, handleClose, reportData }) {
+export default function ReportDialog({ open, handleClose, reportData,getReport}) {
   const [openScreenShot, setOpen] = React.useState(false);
   const [list, setList] = useState([]);
+  // const [status ,setStatus] =useState()
   const handleScreenShotClose = () => {
     setOpen(false);
   };
@@ -36,6 +40,31 @@ export default function ReportDialog({ open, handleClose, reportData }) {
     setOpen(true);
     setList(e);
   };
+  const markComplete =() =>{
+    const config = {
+      method: "put",
+      url: `${API_URL}report/${reportData?.id}/status`,
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      data:{
+        "status": "completed"
+    }
+    };
+
+    axios(config)
+      .then((response) => {
+        // console.log(JSON.stringify(response.data));
+        getReport()
+        handleClose()
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+ 
   return (
     <React.Fragment>
       <BootstrapDialog
@@ -91,7 +120,7 @@ export default function ReportDialog({ open, handleClose, reportData }) {
         </DialogContent>
 
         <DialogActions>
-          <Button variant="contained" onClick={handleClose}>
+          <Button variant="contained" onClick={markComplete}>
             Completed
           </Button>
         </DialogActions>
