@@ -180,7 +180,7 @@ function Report() {
           </TableContainer>
         )}
         <ReportDialog
-        getReport={getReport}
+          getReport={getReport}
           open={open}
           handleClose={handleClose}
           reportData={reportData}

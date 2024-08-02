@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
@@ -29,7 +29,12 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export default function ReportDialog({ open, handleClose, reportData,getReport}) {
+export default function ReportDialog({
+  open,
+  handleClose,
+  reportData,
+  getReport,
+}) {
   const [openScreenShot, setOpen] = React.useState(false);
   const [list, setList] = useState([]);
   // const [status ,setStatus] =useState()
@@ -40,7 +45,7 @@ export default function ReportDialog({ open, handleClose, reportData,getReport})
     setOpen(true);
     setList(e);
   };
-  const markComplete =() =>{
+  const markComplete = () => {
     const config = {
       method: "put",
       url: `${API_URL}report/${reportData?.id}/status`,
@@ -48,23 +53,22 @@ export default function ReportDialog({ open, handleClose, reportData,getReport})
         Accept: "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-      data:{
-        "status": "completed"
-    }
+      data: {
+        status: "completed",
+      },
     };
 
     axios(config)
       .then((response) => {
         // console.log(JSON.stringify(response.data));
-        getReport()
-        handleClose()
+        getReport();
+        handleClose();
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
- 
   return (
     <React.Fragment>
       <BootstrapDialog

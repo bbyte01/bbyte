@@ -8,16 +8,23 @@ const Approute = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />}/>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/*" element={<PrivateRoute><DashboardLayout /></PrivateRoute>}>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/*"
+          element={
+            <PrivateRoute>
+              <DashboardLayout />
+            </PrivateRoute>
+          }
+        >
           {/* <Route path="*" element={
               <DashboardLayout />
           } /> */}
         </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 };
 
 export default Approute;

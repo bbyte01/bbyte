@@ -7,12 +7,10 @@ import axios from "axios";
 import { Config } from "../../Config/config";
 const { API_URL } = Config;
 
-
-
 function Totaluser() {
-  const [userData, setUserData] = useState([])
+  const [userData, setUserData] = useState([]);
 
-  const gettotaluser= () => {
+  const gettotaluser = () => {
     const config = {
       method: "GET",
       url: `${API_URL}user/all`,
@@ -23,7 +21,7 @@ function Totaluser() {
 
     axios(config)
       .then((response) => {
-        setUserData(response.data)
+        setUserData(response.data);
         // console.log(JSON.stringify(response.data));
       })
       .catch((error) => {
@@ -31,9 +29,9 @@ function Totaluser() {
       });
   };
 
-  useEffect(()=> {
-    gettotaluser()
-  },[])
+  useEffect(() => {
+    gettotaluser();
+  }, []);
   return (
     <div>
       <div>
@@ -45,9 +43,7 @@ function Totaluser() {
         >
           {/* <Sidebar /> */}
           <div></div>
-          <Usertable 
-            userData={userData}
-          />
+          <Usertable userData={userData} />
         </div>
       </div>
     </div>
