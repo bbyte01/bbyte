@@ -6,7 +6,7 @@ import img2 from "../../images/img2.png";
 import logo from "../../images/logo.png";
 import axios from "axios";
 import videolog from "../../images/videologo.png";
-import uplogo from "../../images/uplogo.png";
+// import uplogo from "../../images/uplogo.png";
 import { useNavigate } from "react-router-dom";
 import { Config } from "../../Config/config";
 import { Field, Formik } from "formik";
@@ -83,7 +83,7 @@ function Login() {
         }}
       >
         <div className="loginfrom">
-          <img src={uplogo} className="uplogo" />
+          {/* <img src={uplogo} className="uplogo" /> */}
           <img src={videolog} className="videologo" />
           <h1 className="heading">Welcome back</h1>
           <p className="subheading">Enter your email and password to Log In</p>
