@@ -22,6 +22,7 @@ function Homepage() {
   const [monthLabel, setMonthLabel] = useState([]);
   const [monthCount, setMonthCount] = useState([]);
   const [year, setYear] = useState("2024");
+  const [statusCount, setStatusCount] = useState([]);
   const navigate = useNavigate();
 
   function totaluser() {
@@ -78,7 +79,15 @@ function Homepage() {
   useEffect(() => {
     getTotalUser();
     getYearData();
+    getStatusCount();
   }, []);
+
+  const getStatusCount = async () => {
+    const api = await fetch("https://smartrisers.xyz/api/user/all")
+    const json = await api.json()
+    setStatusCount(json)
+  }
+
   return (
     <div>
       <Grid container spacing={2}>
@@ -92,11 +101,11 @@ function Homepage() {
               <div className="paper-list">
                 <div>
                   <p>Active</p>
-                  <p className="green">20,426</p>
+                  <p className="green">{statusCount.filter(item => item.status === 'active').length}</p>
                 </div>
                 <div>
                   <p>Inactive</p>
-                  <p className="blue">5,001</p>
+                  <p className="blue">{statusCount.filter(item => item.status === 'inactive').length}</p>
                 </div>
               </div>
             </div>
@@ -110,7 +119,7 @@ function Homepage() {
                 <h1>Total Videos</h1>
                 <h2 className="count">{totalUser.total_post_count}</h2>
               </div>
-              <div className="paper-list">
+              {/* <div className="paper-list">
                 <div>
                   <p>Active</p>
                   <p className="green">3,100</p>
@@ -123,7 +132,7 @@ function Homepage() {
                   <p>Flag</p>
                   <p className="green">98</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </Paper>
         </Grid>

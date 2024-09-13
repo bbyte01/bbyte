@@ -83,7 +83,9 @@ const deletepost =(user_id , public_id) =>{
     let config = {
       method: "get",
       url: `${API_URL}user/${userId}`,
-      // headers: { }
+      headers : {
+        'Authorization' : `Bearer ${localStorage.getItem('token')}`,
+      },
     };
 
     axios
