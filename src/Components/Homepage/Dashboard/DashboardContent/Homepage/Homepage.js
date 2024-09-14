@@ -119,7 +119,7 @@ function Homepage() {
                 <h1>Total Videos</h1>
                 <h2 className="count">{totalUser.total_post_count}</h2>
               </div>
-              <div className="paper-list">
+              {/* <div className="paper-list">
                 <div>
                   <p>Active</p>
                   <p className="green">3,100</p>
@@ -132,7 +132,7 @@ function Homepage() {
                   <p>Flag</p>
                   <p className="green">98</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </Paper>
         </Grid>
