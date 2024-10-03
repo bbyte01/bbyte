@@ -8,14 +8,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 .paper h1 {
     font-size: 38px;
+    /* background-color:peru; */
 }
 .paper-list {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background-color:rgb(205, 63, 63); */
 }
 .paper-list p {
     margin : 30;

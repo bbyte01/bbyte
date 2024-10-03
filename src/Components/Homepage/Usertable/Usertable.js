@@ -99,7 +99,7 @@ function Usertable({ userData }) {
                   />
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "700" }}>
-                  S. No.
+                 User_ID
                 </TableCell>
                 <TableCell align="left" sx={{ fontWeight: "700" }}>
                   Name
@@ -130,7 +130,10 @@ function Usertable({ userData }) {
                       onChange={(e) => handleChange(e, row.user_id)}
                     />
                   </TableCell>
-                  <TableCell align="left">{index + 1}</TableCell>
+                  {/* <TableCell align="left">{index + 1}</TableCell> */}
+                  <TableCell align="left" sx={{ textTransform: "capitalize" }}>
+                    {row.user_id}
+                  </TableCell>
                   <TableCell align="left" sx={{ textTransform: "capitalize" }}>
                     {row.name}
                   </TableCell>

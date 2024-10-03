@@ -3,7 +3,7 @@ import "./Login.css";
 import * as Yup from "yup";
 import img1 from "../../images/img1.png";
 import img2 from "../../images/img2.png";
-import logo from "../../images/logo.png";
+import uplogo from "../../images/uplogo.png";
 import axios from "axios";
 import videolog from "../../images/videologo.png";
 // import uplogo from "../../images/uplogo.png";
@@ -68,7 +68,7 @@ function Login() {
           justifyContent: "center",
         }}
       >
-        <img src={logo} width={300} />
+        <img src={uplogo} width={300} />
       </div>
 
       <div

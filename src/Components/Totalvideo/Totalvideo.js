@@ -52,6 +52,7 @@ function Totalvideo() {
                   }}
                 >
                   <Avatar
+                  src={post.user.profile_picture}
                     sx={{
                       width: "24px",
                       height: "24px",
