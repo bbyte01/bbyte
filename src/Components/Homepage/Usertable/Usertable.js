@@ -60,12 +60,15 @@ function Usertable({ userData }) {
     navigate("/uservideo");
   }
   return (
-    <Paper
+    
+    <Paper 
       sx={{
         width: "100%",
         padding: "20px",
+        background: "#20b13e8a" ,
       }}
     >
+     
       <h2>Total user table</h2>
       <div>
         <FormControl sx={{ minWidth: 120 }} size="small">
@@ -85,6 +88,8 @@ function Usertable({ userData }) {
             <MenuItem value={30}>one year</MenuItem>
           </Select>
         </FormControl>
+        </div>
+      
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
@@ -174,7 +179,7 @@ function Usertable({ userData }) {
             </TableBody>
           </Table>
         </TableContainer>
-      </div>
+      
     </Paper>
   );
 }

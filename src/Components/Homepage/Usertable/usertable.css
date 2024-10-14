@@ -40,7 +40,7 @@
     text-align: left;
     padding: 8px;
     max-width:100px;
-   
+    BACKGROUND : #dfe949a6 ;
   }
   
   tr {
@@ -61,5 +61,10 @@
   padding: 0px 20px;
   max-width:100px;
   
+}
+
+.totaluser{
+  background-color: #20b13e8a;
+
 }
    

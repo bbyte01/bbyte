@@ -89,11 +89,12 @@ function Homepage() {
   };
 
   return (
-    <div>
-      <Grid container spacing={2}>
+    <div >
+      <Grid container spacing={3}>
         <Grid item md={4}>
-          <Paper>
-            <div onClick={totaluser} className="paper">
+          <Paper >
+            <div className="color">
+            <div onClick={totaluser} className="paper" >
               <div className="paper-heading">
                 <h1>Total Users</h1>
                 <h2 className="count">{totalUser.total_user_count}</h2>
@@ -118,12 +119,14 @@ function Homepage() {
                   </p>
                 </div>
               </div>
+              </div>
             </div>
           </Paper>
         </Grid>
         <Grid item md={2}></Grid>
         <Grid item md={4}>
-          <Paper>
+          <Paper >
+            <div className="color">
             <div onClick={totalvideo} className="paper">
               <div className="paper-heading">
                 <h1>Total Videos</h1>
@@ -132,17 +135,18 @@ function Homepage() {
               <div className="paper-list">
                 <div>
                   <p>Active</p>
-                  <p className="green">3,100</p>
+                  <p className="green">05</p>
                 </div>
                 <div>
                   <p>Inactive</p>
-                  <p className="blue">100</p>
+                  <p className="blue">00</p>
                 </div>
                 <div>
                   <p>Flag</p>
-                  <p className="green">98</p>
+                  <p className="green">00</p>
                 </div>
               </div>
+            </div>
             </div>
           </Paper>
         </Grid>

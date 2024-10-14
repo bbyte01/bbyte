@@ -62,11 +62,11 @@ function Uservideo() {
       });
   };
 
-  const deletepost = (user_id) => {
+  const deletepost = (id) => {
     let config = {
       method: "delete",
       maxBodyLength: Infinity,
-      url: `${API_URL}post/${user_id}?`,
+      url: `${API_URL}post/${id}?`,
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -244,7 +244,7 @@ function Uservideo() {
                 </Typography>
                 <Box>
                   <IconButton className="delete_icon">
-                    <IconTrash onClick={() => deletepost(i.user_id)} />
+                    <IconTrash onClick={() => deletepost(i.id)} />
                   </IconButton>
                 </Box>
               </Box>
