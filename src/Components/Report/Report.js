@@ -91,6 +91,7 @@ function Report() {
         width: "100%",
         padding: "20px",
         position: "relative",
+        background: "#d88888",
       }}
     >
       <Box display="flex" alignItems="center" justifyContent="space-between">
