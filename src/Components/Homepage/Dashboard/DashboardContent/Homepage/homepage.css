@@ -1,5 +1,5 @@
 .paper {
-    background-color:#DDFFF7;
+    background-color:#f9fbf2;
     width: 354px;
     border-radius: 10px;
     padding: 20px;
@@ -40,11 +40,11 @@
     color : #0048FF;
 }
 .chart {
-    background: #BFD7B5;
+    background:#f9fbf2 ;
     margin-top: 20px;
     border-radius: 10px;
     padding: 20px;
 }
 .color{
-    background-color: #DDFFF7; 
+    background-color:#f9fbf2;
 }

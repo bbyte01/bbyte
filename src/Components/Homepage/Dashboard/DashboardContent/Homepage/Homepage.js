@@ -13,10 +13,15 @@ import {
   MenuItem,
   Box,
   InputLabel,
+  Hidden,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 const { API_URL } = Config;
 
 function Homepage() {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
   const [totalUser, setTotalUserData] = useState({});
   const [yearData, setYearData] = useState([]);
   const [monthLabel, setMonthLabel] = useState([]);
@@ -88,65 +93,71 @@ function Homepage() {
     setStatusCount(json);
   };
 
+  const handleOpen = () => {
+
+  }
+
   return (
-    <div >
+    <div>
       <Grid container spacing={3}>
-        <Grid item md={4}>
-          <Paper >
+        <Grid item xs={12} sm={12} md={4}>
+          <Paper>
             <div className="color">
-            <div onClick={totaluser} className="paper" >
-              <div className="paper-heading">
-                <h1>Total Users</h1>
-                <h2 className="count">{totalUser.total_user_count}</h2>
-              </div>
-              <div className="paper-list">
-                <div>
-                  <p>Active</p>
-                  <p className="green">
-                    {
-                      statusCount.filter((item) => item.status === "active")
-                        .length
-                    }
-                  </p>
+              <div onClick={totaluser} className="paper">
+                <div className="paper-heading">
+                  <h1>Total Users</h1>
+                  <h2 className="count">{totalUser.total_user_count}</h2>
                 </div>
-                <div>
-                  <p>Inactive</p>
-                  <p className="blue">
-                    {
-                      statusCount.filter((item) => item.status === "inactive")
-                        .length
-                    }
-                  </p>
+                <div className="paper-list">
+                  <div>
+                    <p>Active</p>
+                    <p className="green">
+                      {
+                        statusCount.filter((item) => item.status === "active")
+                          .length
+                      }
+                    </p>
+                  </div>
+                  <div>
+                    <p>Inactive</p>
+                    <p className="blue">
+                      {
+                        statusCount.filter((item) => item.status === "inactive")
+                          .length
+                      }
+                    </p>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
           </Paper>
         </Grid>
-        <Grid item md={2}></Grid>
-        <Grid item md={4}>
-          <Paper >
+        <Hidden mdDown>
+          <Grid item md={2}></Grid>
+        </Hidden>
+        <Grid item md={4} sm={12} xs={12}>
+          <Paper>
             <div className="color">
-            <div onClick={totalvideo} className="paper">
-              <div className="paper-heading">
-                <h1>Total Videos</h1>
-                <h2 className="count">{totalUser.total_post_count}</h2>
+              <div onClick={totalvideo} className="paper">
+                <div className="paper-heading">
+                  <h1>Total Videos</h1>
+                  <h2 className="count">{totalUser.total_post_count}</h2>
+                </div>
+                <div className="paper-list">
+                  <div>
+                    <p>Active</p>
+                    <p className="green">05</p>
+                  </div>
+                  <div>
+                    <p>Inactive</p>
+                    <p className="blue">00</p>
+                  </div>
+                  <div>
+                    <p>Flag</p>
+                    <p className="green">00</p>
+                  </div>
+                </div>
               </div>
-              <div className="paper-list">
-                <div>
-                  <p>Active</p>
-                  <p className="green">05</p>
-                </div>
-                <div>
-                  <p>Inactive</p>
-                  <p className="blue">00</p>
-                </div>
-                <div>
-                  <p>Flag</p>
-                  <p className="green">00</p>
-                </div>
-              </div>
-            </div>
             </div>
           </Paper>
         </Grid>
@@ -169,13 +180,15 @@ function Homepage() {
             </Select>
           </FormControl>
         </Box>
-        <LineChart
-          xAxis={[{ scaleType: "point", data: monthLabel }]}
-          series={[{ data: monthCount }]}
-          width={1200}
-          height={400}
-          margin={{ left: 70 }}
-        />
+        <Box sx={{ overflow: "auto" }}>
+          <LineChart
+            xAxis={[{ scaleType: "point", data: monthLabel }]}
+            series={[{ data: monthCount }]}
+            width={isLargeScreen ? 1200 : 1200}
+            height={400}
+            margin={{ left: 70 }}
+          />
+        </Box>
       </div>
       <div className="chart">
         <Box display="flex" alignItems="center" justifyContent="space-between">
@@ -195,22 +208,24 @@ function Homepage() {
             </Select>
           </FormControl>
         </Box>
-        <BarChart
-          xAxis={[
-            {
-              scaleType: "band",
-              data: ["group A", "group B", "group C", "group D"],
-            },
-          ]}
-          series={[
-            { data: monthCount },
-            { data: [2, 5, 6, 5, 8, 9, 9, 8, 2, 5, 6, 5, 8, 9, 9, 8] },
-            { data: monthCount },
-            { data: monthCount },
-          ]}
-          width={1200}
-          height={300}
-        />
+        <Box sx={{ overflow: "auto" }}>
+          <BarChart
+            xAxis={[
+              {
+                scaleType: "band",
+                data: ["group A", "group B", "group C", "group D"],
+              },
+            ]}
+            series={[
+              { data: monthCount },
+              { data: [2, 5, 6, 5, 8, 9, 9, 8, 2, 5, 6, 5, 8, 9, 9, 8] },
+              { data: monthCount },
+              { data: monthCount },
+            ]}
+            width={1200}
+            height={300}
+          />
+        </Box>
       </div>
     </div>
   );
