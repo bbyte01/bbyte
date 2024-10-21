@@ -10,13 +10,15 @@ import videolog from "../../images/videologo.png";
 import { useNavigate } from "react-router-dom";
 import { Config } from "../../Config/config";
 import { Field, Formik } from "formik";
-import { Box, CircularProgress } from "@mui/material";
+import { Box, CircularProgress, Hidden, useMediaQuery, useTheme} from "@mui/material";
 import { TextField } from "formik-mui";
 
 const { API_URL } = Config;
 
 function Login() {
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up('md'));
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -56,7 +58,9 @@ function Login() {
   };
 
   return (
+    
     <div className="text">
+     <Hidden mdDown>
       <div
         style={{
           backgroundImage: `url(${img1})`,
@@ -68,22 +72,33 @@ function Login() {
           justifyContent: "center",
         }}
       >
+      
         <img src={uplogo} width={300} />
+        
       </div>
+      </Hidden>
 
       <div
         style={{
           backgroundImage: `url(${img2})`,
-          width: "50%",
+          width: isLargeScreen ? "50%" : "100%",
           height: "100vh",
           backgroundSize: "cover",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
+        
       >
-        <div className="loginfrom">
-          {/* <img src={uplogo} className="uplogo" /> */}
+        
+        <div className={isLargeScreen ? "loginfrom" : "mobileLoginForm"}>
+          {
+            isLargeScreen
+            ?
+            null
+            :
+            <img src={uplogo} className="uplogo" />
+          }
           <img src={videolog} className="videologo" />
           <h1 className="heading">Welcome back</h1>
           <p className="subheading">Enter your email and password to Log In</p>
@@ -106,6 +121,7 @@ function Login() {
               /* and other goodies */
             }) => (
               <form onSubmit={handleSubmit}>
+                
                 <Box
                   sx={{
                     mb: "20px",
@@ -153,9 +169,12 @@ function Login() {
                 </button>
               </form>
             )}
+            
           </Formik>
+          
         </div>
       </div>
+      
     </div>
   );
 }
